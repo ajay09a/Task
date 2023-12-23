@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import List from './List';
 
 function App() {
+  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
   const addTodo = () => {
-    console.log(input)
+    if (input.trim() === '') return;
+    const newTodo = { id: uuidv4(), text: input, completed: false, timestamp: Date.now() };
+    setTodos([newTodo, ...todos]);
+    setInput('');
+    //console.log({todos})
   };
 
   return (
