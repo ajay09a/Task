@@ -37,15 +37,14 @@
   }
 }
 
-
-
 input {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
+  margin: 20px;
 }
 
 .todo-list {
