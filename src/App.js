@@ -4,7 +4,7 @@ import './App.css';
 import List from './List';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(["list", "item"]);
   const [input, setInput] = useState('');
 
   const addTodo = () => {
@@ -25,7 +25,7 @@ function App() {
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && addTodo()}
         />
-      <List/>
+      <List todos={todos}/>
     </div>
   );
 }
