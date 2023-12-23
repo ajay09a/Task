@@ -14,6 +14,9 @@ function App() {
     setInput('');
     //console.log({todos})
   };
+  const resetTodos = () => {
+    setTodos([]);
+  };
 
   return (
     <div className="App">
@@ -25,6 +28,7 @@ function App() {
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && addTodo()}
         />
+        <button onClick={resetTodos}>Reset</button>
       <List todos={todos}/>
     </div>
   );
